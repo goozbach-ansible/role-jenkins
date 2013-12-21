@@ -1,2 +1,3 @@
 ---
 jenkins_web_port: 8080
+jenkins_uri: http://localhost

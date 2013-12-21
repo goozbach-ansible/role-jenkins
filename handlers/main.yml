@@ -1,2 +1,3 @@
 ---
-# handlers file for jenkins
+- name: reload jenkins
+  shell: /usr/bin/curl -X POST {{ jenkins_uri }}:{{ jenkins_web_port }}/safeRestart
