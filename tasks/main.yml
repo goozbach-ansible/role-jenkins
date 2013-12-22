@@ -33,7 +33,7 @@
     - jenkins
 
 - name: disable jenkins plugins
-  file: dest=/var/lib/jenkins/plugins/{{ item }}.jpi.disabled contents=""
+  copy: dest=/var/lib/jenkins/plugins/{{ item }}.jpi.disabled content=""
   with_items: disable_plugins
   notify:
     - reload jenkins
