@@ -1,4 +1,4 @@
-Role Name
+Jenkins
 ========
 
 A simple base installation of Jenkins
