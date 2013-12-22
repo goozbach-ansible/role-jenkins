@@ -35,8 +35,7 @@
 # I like to disable more than this, but you may not want to
 - name: disable jenkins plugins
   copy: dest=/var/lib/jenkins/plugins/{{ item }}.jpi.disabled src=/dev/null
-  with_items:
-    - translation
+  with_items: disable_plugins
   tags:
     - jenkins
 
@@ -50,6 +49,7 @@
   tags:
     - jenkins
 
+# TODO make this more generic
 - name: grep for {{ jenkins_web_port }} in /etc/sysconfig/iptables
   command: /bin/grep -- '-A INPUT -m state --state NEW -m tcp -p tcp --dport {{ jenkins_web_port }} -j ACCEPT' /etc/sysconfig/iptables
   register: jenkins_port
@@ -59,6 +59,7 @@
     - jenkins
     - iptables
 
+# TODO make this more generic
 - name: run lokkit for iptables of jenkins port
   command: /usr/sbin/lokkit -p {{ jenkins_web_port }}:tcp
   when: "jenkins_port.rc != 0"
