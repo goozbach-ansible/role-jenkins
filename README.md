@@ -6,13 +6,12 @@ A simple base installation of Jenkins
 Requirements
 ------------
 
-`goozbach.EPEL` role.
+This role installs the `python-httplib2` package for the use of the `uri` module.
 
 Role Variables
 --------------
 
-Default Variables
-=================
+### Default Variables
 
 * `jenkins_web_port1` -- The port Jenkins listens on. (Default `8080`)
 
@@ -23,8 +22,7 @@ Default Variables
 Dependencies
 ------------
 
-`goozbach.EPEL`
-============
+### `goozbach.EPEL`
 This role requires `goozbach.EPEL` and due to that role not currently having EL5 support this role doesn't either.
 This will be fixed when `goozbach.EPEL` is updated.
 
@@ -36,8 +34,7 @@ GPLv2
 Other Information
 -----------------
 
-Reload Handler
---------------
+### Reload Handler
 It may seem silly to use the `url` module in the reload handler, but this is the safe restart option for Jenkins and will wait until all current tasks are finished before restarting the service.
 This will also make the reload more cross-platform friendly.
 

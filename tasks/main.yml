@@ -16,6 +16,7 @@
   with_items:
     - java-1.6.0-openjdk
     - jenkins
+    - python-httplib2
   tags:
     - jenkins
     - yum
