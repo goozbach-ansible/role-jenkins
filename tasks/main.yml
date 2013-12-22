@@ -32,9 +32,8 @@
   tags:
     - jenkins
 
-# I like to disable more than this, but you may not want to
 - name: disable jenkins plugins
-  copy: dest=/var/lib/jenkins/plugins/{{ item }}.jpi.disabled src=/dev/null
+  file: dest=/var/lib/jenkins/plugins/{{ item }}.jpi.disabled contents=""
   with_items: disable_plugins
   notify:
     - reload jenkins
