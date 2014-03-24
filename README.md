@@ -28,7 +28,6 @@ This will be fixed when `goozbach.EPEL` is updated.
 
 License
 -------
-
 GPLv2
 
 Other Information

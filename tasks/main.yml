@@ -12,7 +12,7 @@
         - jenkins
 
 - name: install jenkins packages loop
-  yum: name={{ item }} state=installed
+  yum: name={{ item }} state=installed enablerepo=epel*
   with_items:
     - java-1.6.0-openjdk
     - jenkins
