@@ -13,7 +13,7 @@ Role Variables
 
 ### Default Variables
 
-* `jenkins_web_port1` -- The port Jenkins listens on. (Default `8080`)
+* `jenkins_web_port1` -- The port Jenkins listens on. (Default `8080`). Ports below 1024 will not work out-of-the-box as the jenkins app is not running under root.
 
 * `jenkins_uri` -- URI *WITHOUT* the trailing slash. (Default `http://localhost`)
 
